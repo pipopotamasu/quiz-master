@@ -21,6 +21,8 @@
 /node_modules
 /yarn-error.log
 
+/.vscode
+
 .byebug_history
 /public/packs
 /public/packs-test
