@@ -2,7 +2,7 @@
   <div>
     <v-list-tile-content class="quiz-content">
       <span>{{ questionNumber }}.</span>
-      <v-list-tile-title class="quiz-title">{{ quiz.content }}</v-list-tile-title>
+      <v-list-tile-title class="quiz-title">{{ removedTagsContent }}</v-list-tile-title>
       <v-btn
           color="blue"
           dark
@@ -20,6 +20,7 @@
 
 <script>
 import AnswerModal from './AnswerModal.vue'
+import striptags from 'striptags'
 
 export default {
   data () {
@@ -40,6 +41,9 @@ export default {
   computed: {
     questionNumber () {
       return this.index + 1
+    },
+    removedTagsContent () {
+      return striptags(this.quiz.content)
     }
   },
   components: {
