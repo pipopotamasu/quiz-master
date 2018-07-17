@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-list-tile-content class="quiz-content">
-      <v-list-tile-title v-html="'1. How many letters are there in the English alphabet?'" class="quiz-title"></v-list-tile-title>
+      <span>{{ questionNumber }}.</span>
+      <v-list-tile-title class="quiz-title">{{ quiz.content }}</v-list-tile-title>
       <v-btn
           color="blue"
           dark
@@ -13,7 +14,7 @@
     <answer-modal
       :dialog="dialog"
       :close="closeModal"
-      :title="'1. How many letters are there in the English alphabet?'"></answer-modal>
+      :content="quiz.content"></answer-modal>
   </div>
 </template>
 
@@ -24,6 +25,21 @@ export default {
   data () {
     return {
       dialog: false
+    }
+  },
+  props: {
+    quiz: {
+      type: Object,
+      required: true
+    },
+    index: {
+      type: Number,
+      required: true
+    }
+  },
+  computed: {
+    questionNumber () {
+      return this.index + 1
     }
   },
   components: {

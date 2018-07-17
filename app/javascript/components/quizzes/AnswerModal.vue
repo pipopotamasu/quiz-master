@@ -6,8 +6,7 @@
       persistent
     >
       <v-card>
-        <v-card-title class="quiz-title grey lighten-2">
-          {{ title }}
+        <v-card-title v-html="content" class="quiz-content grey lighten-2">
         </v-card-title>
 
         <v-card-text>
@@ -45,7 +44,7 @@ export default {
       type: Function,
       required: true
     },
-    title: {
+    content: {
       type: String,
       required: true
     }
@@ -54,7 +53,7 @@ export default {
 </script>
 
 <style scoped>
-.quiz-title {
+.quiz-content {
   font-size: 1.2em;
 }
 
