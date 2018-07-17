@@ -14,7 +14,7 @@
     <answer-modal
       :dialog="dialog"
       :close="closeModal"
-      :content="quiz.content"></answer-modal>
+      :quiz="quiz"></answer-modal>
   </div>
 </template>
 

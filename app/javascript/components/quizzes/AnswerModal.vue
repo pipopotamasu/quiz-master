@@ -5,35 +5,14 @@
       max-width="500"
       persistent
     >
-      <v-card>
-        <v-card-title v-html="content" class="quiz-content grey lighten-2">
-        </v-card-title>
-
-        <v-card-text>
-          <v-text-field label="Input answer" required></v-text-field>
-        </v-card-text>
-
-        <v-card-actions class="actions">
-          <v-spacer></v-spacer>
-          <v-btn
-            depressed
-            @click="close"
-          >
-            BACK
-          </v-btn>
-          <v-btn
-            color="blue"
-            dark
-          >
-            ANSWER
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+      <modal-content :quiz="quiz" :close="close"></modal-content>
     </v-dialog>
   </div>
 </template>
 
 <script>
+import ModalContent from "./ModalContent.vue"
+
 export default {
   props: {
     dialog: {
@@ -44,22 +23,13 @@ export default {
       type: Function,
       required: true
     },
-    content: {
-      type: String,
+    quiz: {
+      type: Object,
       required: true
     }
+  },
+  components: {
+    ModalContent
   }
 }
 </script>
-
-<style scoped>
-.quiz-content {
-  font-size: 1.2em;
-  padding-bottom: 0px;
-}
-
-.actions {
-  margin-top: -1.2em;
-  padding: 1em;
-}
-</style>
