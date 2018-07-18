@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list-tile-content class="quiz-content">
+    <v-list-tile-content class="quiz-item">
       <span>{{ questionNumber }}.</span>
       <v-list-tile-title class="quiz-title">{{ removedTagsContent }}</v-list-tile-title>
       <v-btn
@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style scoped>
-.quiz-content {
+.quiz-item {
   display: inline;
 }
 

@@ -4,17 +4,17 @@
     <v-divider></v-divider>
 
     <v-list-tile :key="i" v-for="(quiz, i) in quizzes">
-      <quiz-content :quiz="quiz" :index="i"></quiz-content>
+      <quiz-item :quiz="quiz" :index="i"></quiz-item>
     </v-list-tile>
   </v-list>
 </template>
 
 <script>
-import QuizContent from './QuizContent.vue'
+import QuizItem from './QuizItem.vue'
 
 export default {
   components: {
-    QuizContent
+    QuizItem
   },
   props: {
     quizzes: {
