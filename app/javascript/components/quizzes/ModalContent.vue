@@ -9,11 +9,11 @@
 
     <v-card-text v-else>
       <div v-if="corrected">
-        <span>icon</span>
+        <i class="far fa-check-circle fa-5x fa-correct"></i>
         <span>Your Answer: {{ this.input }}</span>
       </div>
       <div v-else>
-        <span>icon</span>
+        <i class="far fa-times-circle fa-5x fa-incorrect"></i>
         <span>Your Answer: {{ this.input }}</span>
         <span v-if="!answerIsNumber">Correct Answer: {{ this.quiz.answer }}</span>
         <span v-if="answerIsNumber">Correct Answer: {{ this.quiz.answer }} or {{ answerToWord }}</span>
@@ -82,5 +82,13 @@ export default {
 .quiz-content {
   font-size: 1.2em;
   padding-bottom: 0px;
+}
+
+.fa-correct {
+  color: #00cc00;
+}
+
+.fa-incorrect {
+  color: #4689ff;
 }
 </style>
