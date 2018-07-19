@@ -4,6 +4,9 @@
     </v-card-title>
 
     <v-card-text v-if="!answered">
+      <v-alert :value="has_error" type="error">
+        Answer is required.
+      </v-alert>
       <v-text-field label="Input answer" required v-model="input"></v-text-field>
     </v-card-text>
 
@@ -32,7 +35,8 @@ export default {
     return {
       input: '',
       answered: false,
-      corrected: false
+      corrected: false,
+      has_error: false
     }
   },
   props: {
@@ -69,6 +73,11 @@ export default {
   },
   methods: {
     checkAnswer () {
+      if (this.input === '') {
+        this.has_error = true
+        return
+      }
+
       this.answered = true
       if (this.isCorrectAnswer) {
         this.corrected = true
@@ -82,6 +91,7 @@ export default {
       this.input = ''
       this.answered = false
       this.corrected = false
+      this.has_error = false
     }
   }
 }
@@ -91,5 +101,9 @@ export default {
 .quiz-content {
   font-size: 1.2em;
   padding-bottom: 0px;
+}
+
+.v-alert {
+  height: 3em;
 }
 </style>
