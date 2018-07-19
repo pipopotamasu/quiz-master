@@ -1,0 +1,4 @@
+/* override vuetify css */
+p {
+  margin-bottom: 0px;
+}
