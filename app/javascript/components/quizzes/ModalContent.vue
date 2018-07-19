@@ -8,15 +8,21 @@
     </v-card-text>
 
     <v-card-text v-else>
-      <div v-if="corrected">
+      <div class="correct" v-if="corrected">
         <i class="far fa-check-circle fa-5x fa-correct"></i>
-        <span>Your Answer: {{ this.input }}</span>
+        <div class="your-answer">
+          Your Answer: {{ this.input }}
+        </div>
       </div>
-      <div v-else>
+      <div class="incorrect" v-else>
         <i class="far fa-times-circle fa-5x fa-incorrect"></i>
-        <span>Your Answer: {{ this.input }}</span>
-        <span v-if="!answerIsNumber">Correct Answer: {{ this.quiz.answer }}</span>
-        <span v-if="answerIsNumber">Correct Answer: {{ this.quiz.answer }} or {{ answerToWord }}</span>
+        <div class="your-answer">
+          Your Answer: {{ this.input }}
+        </div>
+        <div class="correct-answer">
+          <span v-if="!answerIsNumber">Correct Answer: {{ this.quiz.answer }}</span>
+          <span v-if="answerIsNumber">Correct Answer: {{ this.quiz.answer }} or {{ answerToWord }}</span>
+        </div>
       </div>
     </v-card-text>
 
@@ -82,6 +88,19 @@ export default {
 .quiz-content {
   font-size: 1.2em;
   padding-bottom: 0px;
+}
+
+.correct,
+.incorrect {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.your-answer,
+.correct-answer {
+  font-size: 1.5em;
+  padding-top: 0.5em;
 }
 
 .fa-correct {
