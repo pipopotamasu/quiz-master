@@ -4,6 +4,7 @@
     <v-btn
       depressed
       @click="close"
+      v-if="!answered"
     >
       BACK
     </v-btn>
@@ -14,6 +15,13 @@
       v-if="!answered"
     >
       ANSWER
+    </v-btn>
+    <v-btn
+      depressed
+      @click="close"
+      v-if="answered"
+    >
+      CLOSE
     </v-btn>
   </v-card-actions>
 </template>

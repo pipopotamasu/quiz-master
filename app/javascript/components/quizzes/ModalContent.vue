@@ -26,7 +26,7 @@
       </div>
     </v-card-text>
 
-    <modal-actions :close="close" :checkAnswer="checkAnswer" :answered="answered"></modal-actions>
+    <modal-actions :close="reset" :checkAnswer="checkAnswer" :answered="answered"></modal-actions>
   </v-card>
 </template>
 
@@ -80,6 +80,15 @@ export default {
         this.corrected = true
       }
     },
+    reset () {
+      this.close()
+      this.initialize()
+    },
+    initialize () {
+      this.input = ''
+      this.answered = false
+      this.corrected = false
+    }
   }
 }
 </script>
