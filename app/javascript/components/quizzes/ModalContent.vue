@@ -100,7 +100,6 @@ export default {
 <style scoped>
 .quiz-content {
   font-size: 1.2em;
-  padding-bottom: 0px;
 }
 
 .v-alert {
