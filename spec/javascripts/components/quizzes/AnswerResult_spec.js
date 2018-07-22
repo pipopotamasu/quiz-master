@@ -1,7 +1,10 @@
-import { mount } from "@vue/test-utils";
+import { mount, createLocalVue } from "@vue/test-utils";
 import assert from "power-assert";
-import sinon from "sinon";
+import Vuetify from "vuetify";
 import AnswerResult from "@/components/quizzes/AnswerResult.vue";
+
+const localVue = createLocalVue()
+localVue.use(Vuetify)
 
 describe("AnswerResult", () => {
   let wrapper;

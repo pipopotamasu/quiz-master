@@ -1,7 +1,11 @@
-import { mount } from "@vue/test-utils";
+import { mount, createLocalVue } from "@vue/test-utils";
 import assert from "power-assert";
 import sinon from "sinon";
+import Vuetify from "vuetify";
 import ModalActions from "@/components/quizzes/ModalActions";
+
+const localVue = createLocalVue()
+localVue.use(Vuetify)
 
 describe("ModalActions", () => {
   let wrapper;
@@ -14,9 +18,10 @@ describe("ModalActions", () => {
           close: sinon.stub(),
           updateAnswerStatus: sinon.stub(),
           answered: false
-        }
+        },
+        localVue
       });
-      buttons = wrapper.findAll("v-btn");
+      buttons = wrapper.findAll(".v-btn");
       backButton = buttons.at(0);
       answerButton = buttons.at(1);
     });
@@ -48,9 +53,10 @@ describe("ModalActions", () => {
           close: sinon.stub(),
           updateAnswerStatus: sinon.stub(),
           answered: true
-        }
+        },
+        localVue
       });
-      buttons = wrapper.findAll("v-btn");
+      buttons = wrapper.findAll(".v-btn");
       closeButton = buttons.at(0);
     });
 
