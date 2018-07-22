@@ -11,7 +11,7 @@
     <v-btn
       color="blue"
       dark
-      @click="checkAnswer"
+      @click="updateAnswerStatus"
       v-if="!answered"
     >
       ANSWER
@@ -33,7 +33,7 @@ export default {
       type: Function,
       required: true
     },
-    checkAnswer: {
+    updateAnswerStatus: {
       type: Function,
       required: true
     },

@@ -12,7 +12,7 @@ describe("ModalActions", () => {
       wrapper = mount(ModalActions, {
         propsData: {
           close: sinon.stub(),
-          checkAnswer: sinon.stub(),
+          updateAnswerStatus: sinon.stub(),
           answered: false
         }
       });
@@ -35,7 +35,7 @@ describe("ModalActions", () => {
 
       it("should call methods", () => {
         assert(wrapper.props().close.calledOnce === true);
-        assert(wrapper.props().checkAnswer.calledOnce === true);
+        assert(wrapper.props().updateAnswerStatus.calledOnce === true);
       });
     });
   });
@@ -46,7 +46,7 @@ describe("ModalActions", () => {
       wrapper = mount(ModalActions, {
         propsData: {
           close: sinon.stub(),
-          checkAnswer: sinon.stub(),
+          updateAnswerStatus: sinon.stub(),
           answered: true
         }
       });
