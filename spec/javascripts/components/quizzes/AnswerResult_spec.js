@@ -1,4 +1,4 @@
-import { mount } from "vue-test-utils";
+import { mount } from "@vue/test-utils";
 import assert from "power-assert";
 import sinon from "sinon";
 import AnswerResult from "@/components/quizzes/AnswerResult.vue";
