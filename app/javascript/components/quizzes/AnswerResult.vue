@@ -1,6 +1,6 @@
 <template>
   <div class="answer-result">
-    <div class="correct" v-if="corrected">
+    <div class="correct" v-if="isCorrectAnswer">
       <i class="far fa-check-circle fa-5x fa-correct"></i>
       <div class="your-answer">
         Your Answer: {{ yourAnswer }}
@@ -20,12 +20,10 @@
 </template>
 
 <script>
+import converter from "number-to-words"
+
 export default {
   props: {
-    corrected: {
-      types: Boolean,
-      require: true
-    },
     yourAnswer: {
       types: String,
       require: true
@@ -34,14 +32,24 @@ export default {
       types: String,
       require: true
     },
-    answerToWord: {
-      types: String,
-      require: true
+  },
+  computed: {
+    isCorrectAnswer () {
+      if (this.answerIsNumber) {
+        return (
+          this.yourAnswer === this.correctAnswer ||
+          this.yourAnswer === this.answerToWord
+        )
+      } else {
+        return this.yourAnswer === this.correctAnswer
+      }
     },
-    answerIsNumber: {
-      types: Boolean,
-      require: true
+    answerIsNumber () {
+      return isFinite(this.correctAnswer)
     },
+    answerToWord () {
+      return converter.toWords(this.correctAnswer)
+    }
   }
 }
 </script>
