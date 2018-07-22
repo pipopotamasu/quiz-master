@@ -11,8 +11,15 @@ cd quiz-master
 bundle install
 yarn install
 
+# initial data
+rails db:seed
+
 # start server
 rails s
+## user site
+http://0.0.0.0:3000/
+## admin site
+http://0.0.0.0:3000/admin
 
 # testing
 bundle exec rspec
