@@ -1,24 +1,20 @@
-# README
+# Quiz Master
+## Setup
+```
+# clone repo
+git clone https://github.com/pipopotamasu/quiz-master.git
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# change repo dir
+cd quiz-master
 
-Things you may want to cover:
+# install dependencies
+bundle install
+yarn install
 
-* Ruby version
+# start server
+rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# testing
+bundle exec rspec
+yarn run test
+```
