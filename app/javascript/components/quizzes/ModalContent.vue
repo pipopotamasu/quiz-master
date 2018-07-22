@@ -7,7 +7,7 @@
       <v-alert :value="has_error" type="error">
         Answer is required.
       </v-alert>
-      <v-text-field label="Input answer" required v-model="input"></v-text-field>
+      <v-text-field class="answer-input" label="Input answer" required v-model="input"></v-text-field>
     </v-card-text>
 
     <v-card-text v-else>

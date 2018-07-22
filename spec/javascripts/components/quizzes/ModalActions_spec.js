@@ -4,8 +4,8 @@ import sinon from "sinon";
 import Vuetify from "vuetify";
 import ModalActions from "@/components/quizzes/ModalActions";
 
-const localVue = createLocalVue()
-localVue.use(Vuetify)
+const localVue = createLocalVue();
+localVue.use(Vuetify);
 
 describe("ModalActions", () => {
   let wrapper;

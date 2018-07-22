@@ -3,8 +3,8 @@ import assert from "power-assert";
 import Vuetify from "vuetify";
 import AnswerResult from "@/components/quizzes/AnswerResult.vue";
 
-const localVue = createLocalVue()
-localVue.use(Vuetify)
+const localVue = createLocalVue();
+localVue.use(Vuetify);
 
 describe("AnswerResult", () => {
   let wrapper;
@@ -19,12 +19,12 @@ describe("AnswerResult", () => {
           }
         });
       });
-  
+
       it("render correct answer", () => {
         assert(wrapper.contains(".correct") === true);
         assert(wrapper.text() === "Your Answer: correct answer");
       });
-    })
+    });
 
     context("when answer is number", () => {
       before(() => {
@@ -35,7 +35,7 @@ describe("AnswerResult", () => {
           }
         });
       });
-  
+
       it("render correct answer", () => {
         assert(wrapper.contains(".correct") === true);
         assert(wrapper.text() === "Your Answer: 1");
@@ -51,7 +51,7 @@ describe("AnswerResult", () => {
           }
         });
       });
-  
+
       it("render correct answer", () => {
         assert(wrapper.contains(".correct") === true);
         assert(wrapper.text() === "Your Answer: one");
@@ -69,11 +69,17 @@ describe("AnswerResult", () => {
           }
         });
       });
-  
+
       it("render incorrect answer", () => {
         assert(wrapper.contains(".incorrect") === true);
-        assert(wrapper.find('.your-answer').text() === "Your Answer: incorrect answer");
-        assert(wrapper.find('.correct-answer').text() === "Correct Answer: correct answer");
+        assert(
+          wrapper.find(".your-answer").text() ===
+            "Your Answer: incorrect answer"
+        );
+        assert(
+          wrapper.find(".correct-answer").text() ===
+            "Correct Answer: correct answer"
+        );
       });
     });
 
@@ -86,11 +92,16 @@ describe("AnswerResult", () => {
           }
         });
       });
-  
+
       it("render incorrect answer", () => {
         assert(wrapper.contains(".incorrect") === true);
-        assert(wrapper.find('.your-answer').text() === "Your Answer: incorrect answer");
-        assert(wrapper.find('.correct-answer').text() === "Correct Answer: 1 or one");
+        assert(
+          wrapper.find(".your-answer").text() ===
+            "Your Answer: incorrect answer"
+        );
+        assert(
+          wrapper.find(".correct-answer").text() === "Correct Answer: 1 or one"
+        );
       });
     });
   });
